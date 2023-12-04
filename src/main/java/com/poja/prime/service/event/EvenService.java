@@ -7,8 +7,5 @@ import java.util.Random;
 
 @Service
 public class EvenService {
-    public BigInteger generatePrime() {
-        Random random = new Random();
-        return BigInteger.probablePrime(10000, random);
-    }
+
 }

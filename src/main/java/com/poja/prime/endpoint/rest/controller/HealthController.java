@@ -12,6 +12,7 @@ import com.poja.prime.repository.model.DummyUuid;
 
 import java.math.BigInteger;
 import java.util.List;
+import java.util.Random;
 
 import com.poja.prime.service.event.EvenService;
 import lombok.Value;
@@ -52,6 +53,12 @@ public class HealthController {
 
   @GetMapping("/new-prime")
   public String getNewPrime() {
-    return "milay e";
+    BigInteger prime = generatePrime();
+    return prime.toString();
+  }
+
+  public BigInteger generatePrime() {
+    Random random = new Random();
+    return BigInteger.probablePrime(10000, random);
   }
 }
