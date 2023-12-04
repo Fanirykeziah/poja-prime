@@ -52,7 +52,6 @@ public class HealthController {
 
   @GetMapping("/new-prime")
   public String getNewPrime() {
-    BigInteger prime = evenService.generatePrime();
-    return prime.toString();
+    return "milay e";
   }
 }
