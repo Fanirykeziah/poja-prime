@@ -8,10 +8,12 @@ import java.math.BigInteger;
 
 @RestController
 public class EvenController {
-    private EvenService service;
-
+    EvenService service;
     @GetMapping("/new-prime")
-    public BigInteger isEven(){
-        return service.isEven();
+    public String getNewPrime() {
+        BigInteger prime = service.generatePrime();
+        return prime.toString();
     }
+
+
 }

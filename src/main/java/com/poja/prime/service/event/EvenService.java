@@ -7,11 +7,8 @@ import java.util.Random;
 
 @Service
 public class EvenService {
-    public BigInteger isEven(){
-        int bitLength = 10000;
+    public BigInteger generatePrime() {
         Random random = new Random();
-        BigInteger prime = BigInteger.probablePrime(bitLength, random);
-
-        return prime;
+        return BigInteger.probablePrime(10000, random);
     }
 }
