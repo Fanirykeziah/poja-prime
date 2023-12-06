@@ -10,6 +10,9 @@ import java.math.BigInteger;
 public class EvenController {
     EvenService service;
 
-
-
+    @GetMapping("/new-prime")
+    public String getNewPrime() {
+        BigInteger prime = service.generatePrime();
+        return prime.toString();
+    }
 }

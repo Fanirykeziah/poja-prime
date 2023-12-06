@@ -28,8 +28,6 @@ public class HealthController {
   DummyUuidRepository dummyUuidRepository;
   EventProducer eventProducer;
 
-  EvenService evenService;
-
   @GetMapping("/ping")
   public String ping() {
     return "pong";
@@ -49,16 +47,5 @@ public class HealthController {
 
     Thread.sleep(20_000);
     return dummyUuidRepository.findById(randomUuid).map(DummyUuid::getId).orElseThrow();
-  }
-
-  @GetMapping("/new-prime")
-  public String getNewPrime() {
-    BigInteger prime = generatePrime();
-    return prime.toString();
-  }
-
-  public BigInteger generatePrime() {
-    Random random = new Random();
-    return BigInteger.probablePrime(10000, random);
   }
 }
