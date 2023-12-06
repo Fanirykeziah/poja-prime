@@ -9,6 +9,6 @@ import java.util.Random;
 public class EvenService {
     public BigInteger generatePrime() {
         Random random = new Random();
-        return BigInteger.probablePrime(10000, random);
+        return BigInteger.probablePrime(1000, random);
     }
 }
