@@ -14,7 +14,6 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.Random;
 
-import com.poja.prime.service.event.EvenService;
 import lombok.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -47,5 +46,11 @@ public class HealthController {
 
     Thread.sleep(20_000);
     return dummyUuidRepository.findById(randomUuid).map(DummyUuid::getId).orElseThrow();
+  }
+
+  @GetMapping(value = "/new-prime")
+  public String generateNewPrime() {
+    BigInteger probablePrime = BigInteger.probablePrime(1000, new Random());
+    return probablePrime.toString();
   }
 }
